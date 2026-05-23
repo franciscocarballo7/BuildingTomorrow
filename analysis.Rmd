@@ -2,7 +2,7 @@
 title: "ESS Data Analysis"
 author: "Francisco Carballo"
 date: "2026-05-23"
-output: html_document
+output: github_document 
 ---
 
 ```{r setup, include=FALSE}
