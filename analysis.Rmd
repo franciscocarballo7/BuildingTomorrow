@@ -1,15 +1,39 @@
 ---
-title: "ESS Data Analysis"
-author: "Francisco Carballo"
-date: "2026-05-23"
-output: github_document 
+title: "Cleaning data"
+output: github_document
 ---
+```{r setup, include = FALSE}
+# Install packages if needed
+# install.packages(c("readxl", "dplyr", "janitor"), dependencies = TRUE)
 
-```{r}
-## Super helpful and working code.
-
-## More code
-
-# A very nice figure - look!
+# Load libraries
+library(readxl)
+library(dplyr)
+library(janitor)
+```
+# Load Excel file
+```{r, include = TRUE}
+data <- read_excel("raw/ESS latest term 3 2025.xlsx")
 ```
 
+
+
+```{r, include = FALSE}
+# View first rows
+head(data)
+
+# See columns
+names(data)
+
+# Clean headers
+data <- data %>%
+  clean_names()
+
+# See new names
+names(data)
+```
+
+```{r, include = TRUE, display = ALL}
+data %>% 
+  count(camp_sub_county)
+```
