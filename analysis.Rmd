@@ -2,6 +2,7 @@
 title: "Cleaning data"
 output: github_document
 ---
+
 ```{r setup, include = FALSE}
 # Install packages if needed
 # install.packages(c("readxl", "dplyr", "janitor"), dependencies = TRUE)
@@ -11,12 +12,12 @@ library(readxl)
 library(dplyr)
 library(janitor)
 ```
+
 # Load Excel file
-```{r, include = TRUE}
+
+```{r}
 data <- read_excel("raw/ESS latest term 3 2025.xlsx")
 ```
-
-
 
 ```{r, include = FALSE}
 # View first rows
@@ -33,7 +34,7 @@ data <- data %>%
 names(data)
 ```
 
-```{r, include = TRUE, display = ALL}
+```{r, include = TRUE}
 data %>% 
   count(camp_sub_county)
 ```
